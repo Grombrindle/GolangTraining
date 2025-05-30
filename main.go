@@ -2,16 +2,10 @@ package main
 
 import (
 	"fmt"
-<<<<<<< HEAD
 	web "helloworld/Websocket"
 	gg "helloworld/modules"
 	"log"
 	// "net/http"
-=======
-	"log"
-
-	gg "helloworld/modules"
->>>>>>> 291e817528becc56ad1799d8ac451a3f7bf3aa20
 	// "rsc.io/quote"
 )
 
@@ -23,7 +17,6 @@ func main() {
 	// Set properties of the predefined Logger, including
 	// the log entry prefix and a flag to disable printing
 	// the time, source file, and line number.
-<<<<<<< HEAD
 
 	web.HttpCall()
 
@@ -31,8 +24,6 @@ func main() {
 		println("")
 	}
 
-=======
->>>>>>> 291e817528becc56ad1799d8ac451a3f7bf3aa20
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
