@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Websocket
 
 import (
@@ -84,4 +85,17 @@ func HttpCall() {
 	// 	// fmt.Fprintf(w, "shit is: %s\n", r.URL.Query().Get("token"))
 	// 	// fmt.Print(r.URL.Query().Get("token"))
 	// })
+=======
+package websocket
+
+import (
+	"fmt"
+	http "net/http"
+)
+
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "helloworld ma nigga: %s\n", r.URL.Path)
+	})
+>>>>>>> 291e817528becc56ad1799d8ac451a3f7bf3aa20
 }
