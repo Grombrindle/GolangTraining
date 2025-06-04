@@ -4,6 +4,7 @@ import (
 	"fmt"
 	sql "helloworld/Sql"
 	gg "helloworld/modules"
+	tmpt "helloworld/webSocket"
 
 	// web "helloworld/webSocket"
 	"log"
@@ -16,6 +17,9 @@ func Go() string {
 }
 
 func main() {
+
+	tmpt.Templates()
+
 	sql.DatabaseTest()
 
 	// Set properties of the predefined Logger, including
