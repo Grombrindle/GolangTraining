@@ -5,6 +5,7 @@ import (
 	sql "helloworld/Sql"
 	gg "helloworld/modules"
 	tmpt "helloworld/webSocket"
+	middleware "helloworld/webSocket/middleware"
 
 	// web "helloworld/webSocket"
 	"log"
@@ -17,10 +18,13 @@ func Go() string {
 }
 
 func main() {
-
-	tmpt.Templates()
-
-	sql.DatabaseTest()
+	// Start templates in a goroutine so it doesn't block
+	go tmpt.Templates()
+	go tmpt.Form()
+	go middleware.MiddlewareB()
+	go middleware.MiddlewareA()
+	// Start database test in a goroutine
+	go sql.DatabaseTest()
 
 	// Set properties of the predefined Logger, including
 	// the log entry prefix and a flag to disable printing
@@ -42,12 +46,15 @@ func main() {
 	message, err := gg.Hello("dasdsad")
 
 	// If an error was returned, print it to the console and
-	// exit the program.
+	// allow the program to continue.
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Error calling gg.Hello:", err)
+	} else {
+		// If no error was returned, print the returned message
+		// to the console.
+		fmt.Println(message)
 	}
 
-	// If no error was returned, print the returned message
-	// to the console.
-	fmt.Println(message)
+	// Keep main thread running to allow goroutines to continue
+	select {}
 }
