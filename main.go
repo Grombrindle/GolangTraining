@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
-	web "helloworld/Websocket"
+	sql "helloworld/Sql"
 	gg "helloworld/modules"
+
+	// web "helloworld/webSocket"
 	"log"
 	// "net/http"
 	// "rsc.io/quote"
@@ -14,11 +16,13 @@ func Go() string {
 }
 
 func main() {
+	sql.DatabaseTest()
+
 	// Set properties of the predefined Logger, including
 	// the log entry prefix and a flag to disable printing
 	// the time, source file, and line number.
 
-	web.HttpCall()
+	// web.HttpCall()
 
 	for i := 0; i < 10; i++ {
 		println("")
