@@ -19,8 +19,12 @@ func Go() string {
 
 func main() {
 	// Start templates in a goroutine so it doesn't block
+	go tmpt.WebSocketTest()
+	go tmpt.JsonUser()
+	go tmpt.SessionCookie()
 	go tmpt.Templates()
 	go tmpt.Form()
+	go middleware.Hash()
 	go middleware.MiddlewareB()
 	go middleware.MiddlewareA()
 	// Start database test in a goroutine

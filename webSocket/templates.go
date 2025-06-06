@@ -28,5 +28,5 @@ func Templates() {
 		}
 		tmpl.Execute(w, data)
 	})
-	http.ListenAndServe(":8000", nil)
+	// http.ListenAndServe(":8000", nil)
 }

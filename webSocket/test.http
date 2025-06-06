@@ -1,0 +1,9 @@
+POST http://localhost:8000/decode
+Content-Type: application/json
+
+{
+  "firstname": "Elon",
+  "lastname": "Musk",
+  "age": 48
+}
+
